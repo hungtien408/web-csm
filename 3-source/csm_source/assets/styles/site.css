@@ -103,7 +103,7 @@ a:visited, a:focus {
 
     .right-head #menu > li {
         float: left;
-        padding: 0 23px;
+        padding: 0 12px;
         line-height: 58px;
     }
 
@@ -123,10 +123,11 @@ a:visited, a:focus {
 
     .right-head .menu {
         display: inline-block;
+        float: left;
     }
 
     .right-head .hotline {
-        float: right;
+        float: left;
         margin-top: 23px;
     }
 
@@ -1514,7 +1515,8 @@ a:visited, a:focus {
     }
 
     .right-head #menu > li {
-        padding: 0 9px;
+        /*padding: 0 9px;*/
+        padding: 0;
     }
 
     #footer .pull-left {
@@ -1595,9 +1597,13 @@ a:visited, a:focus {
     }
 
     .right-head .hotline {
+        /*padding-right: 75px;*/
+        padding-right: 4px;
+    }
+    .right-head .lang{
+        float: left;
         padding-right: 75px;
     }
-
     .lienhe {
         display: none;
     }
@@ -1692,10 +1698,23 @@ a:visited, a:focus {
     .right-head .hotline {
         display: none;
     }
-
+    #header{
+        height: auto;
+    }
+    .right-head{
+        width: 100%;
+    }
     .logo {
-        width: 150px;
+        width: 100%;
         margin-top: 20px;
+        text-align: center;
+    }
+    .logo img{
+        width: 150px;
+    }
+    .right-head .lang{
+        float: right;
+        padding: 0;
     }
 }
 @media screen and (max-width:500px) {
@@ -1747,4 +1766,11 @@ a:visited, a:focus {
 }
 .txtLeft {
     text-align: left;
+}
+.right-head .lang{
+    float: right;
+    text-align: right;
+    display: inline-block;
+    margin-top: 26px;
+    padding-left: 5px;
 }

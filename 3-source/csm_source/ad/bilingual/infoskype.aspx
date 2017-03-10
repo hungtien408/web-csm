@@ -422,7 +422,7 @@
                     <asp:GridBoundColumn HeaderText="ID" DataField="ProductID" SortExpression="ProductID" Visible="False">
                     </asp:GridBoundColumn>
                     <asp:GridBoundColumn DataField="ProductName" HeaderText="Tiêu Đề" SortExpression="ProductName" />
-                    <asp:GridBoundColumn DataField="ProductNameEn" HeaderText="Tiêu Đề (En)" SortExpression="ProductNameEn" Visible="False" />
+                    <asp:GridBoundColumn DataField="ProductNameEn" HeaderText="Tiêu Đề (En)" SortExpression="ProductNameEn" />
                     <asp:GridTemplateColumn DataField="SavePrice" HeaderText="Giá cũ" SortExpression="SavePrice" Visible="False">
                         <ItemTemplate>
                             <%# string.Format("{0:##,###.##}", Eval("SavePrice")) %>
@@ -713,6 +713,19 @@
                                                     </tr>
                                                     <tr>
                                                         <td class="left">
+                                                            Tiêu đề (En)
+                                                        </td>
+                                                        <td>
+                                                            <asp:RadTextBox ID="txtProductNameEn" runat="server" Text='<%# Bind("ProductNameEn") %>'
+                                                                EmptyMessage="Tiêu đề (En)..." Width="500px">
+                                                            </asp:RadTextBox>
+                                                            <%--<asp:RadTextBox runat="server" Width="500px" ID="RadTextBox1" Text='<%# Bind("ProductName") %>' />
+                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtProductName"
+                                            Display="Dynamic" ErrorMessage="Nhập tên sản phẩm" SetFocusOnError="true">*</asp:RequiredFieldValidator>--%>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="left">
                                                             Skype
                                                         </td>
                                                         <td>
@@ -784,19 +797,6 @@
                                                             <asp:RadTextBox ID="txtMetaDescriptionEn" runat="server" Width="500px" Text='<%# Bind("MetaDescriptionEn") %>'
                                                                 EmptyMessage="Meta Description...">
                                                             </asp:RadTextBox>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="left">
-                                                            Tiêu đề
-                                                        </td>
-                                                        <td>
-                                                            <asp:RadTextBox ID="txtProductNameEn" runat="server" Text='<%# Bind("ProductNameEn") %>'
-                                                                EmptyMessage="Tiêu đề..." Width="500px">
-                                                            </asp:RadTextBox>
-                                                            <%--<asp:RadTextBox runat="server" Width="500px" ID="RadTextBox1" Text='<%# Bind("ProductName") %>' />
-                                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txtProductName"
-                                            Display="Dynamic" ErrorMessage="Nhập tên sản phẩm" SetFocusOnError="true">*</asp:RequiredFieldValidator>--%>
                                                         </td>
                                                     </tr>
                                                     <tr>

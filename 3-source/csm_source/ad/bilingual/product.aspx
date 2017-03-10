@@ -423,8 +423,7 @@
                         Visible="False">
                     </asp:GridBoundColumn>
                     <asp:GridBoundColumn DataField="ProductName" HeaderText="Tên sản phẩm" SortExpression="ProductName" />
-                    <asp:GridBoundColumn DataField="ProductNameEn" HeaderText="Tiêu Đề (En)" SortExpression="ProductNameEn"
-                        Visible="False" />
+                    <asp:GridBoundColumn DataField="ProductNameEn" HeaderText="Tên sản phẩm (En)" SortExpression="ProductNameEn"/>
                     <asp:GridTemplateColumn DataField="SavePrice" HeaderText="Giá cũ" SortExpression="SavePrice"
                         Visible="False">
                         <ItemTemplate>
@@ -694,6 +693,13 @@
                                                             </asp:RadNumericTextBox>
                                                         </td>
                                                     </tr>
+                                                    <tr>
+                                                        <td colspan="2">
+                                                            <h3>
+                                                                (Ngôn Ngữ Tiếng Việt)</h3>
+                                                            <hr />
+                                                        </td>
+                                                    </tr>
                                                     <tr class="invisible">
                                                         <td class="left">
                                                             Tag
@@ -786,7 +792,7 @@
                                                             </asp:RadEditor>
                                                         </td>
                                                     </tr>
-                                                    <asp:Panel ID="Panel3" runat="server" Visible="False">
+                                                    <asp:Panel ID="Panel3" runat="server" Visible="True">
                                                         <%-- Tiếng Anh--%>
                                                         <tr>
                                                             <td colspan="2">

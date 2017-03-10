@@ -422,7 +422,7 @@
                     <asp:GridBoundColumn HeaderText="ID" DataField="ProductID" SortExpression="ProductID" Visible="False">
                     </asp:GridBoundColumn>
                     <asp:GridBoundColumn DataField="ProductName" HeaderText="Tiêu Đề" SortExpression="ProductName" />
-                    <asp:GridBoundColumn DataField="ProductNameEn" HeaderText="Tiêu Đề (En)" SortExpression="ProductNameEn" Visible="False" />
+                    <asp:GridBoundColumn DataField="ProductNameEn" HeaderText="Tiêu Đề (En)" SortExpression="ProductNameEn" />
                     <asp:GridTemplateColumn DataField="SavePrice" HeaderText="Giá cũ" SortExpression="SavePrice" Visible="False">
                         <ItemTemplate>
                             <%# string.Format("{0:##,###.##}", Eval("SavePrice")) %>
@@ -689,6 +689,13 @@
                                                         </td>
                                                     </tr>
                                                     <tr>
+                                                        <td colspan="2">
+                                                            <h3>
+                                                                (Ngôn Ngữ Tiếng Việt)</h3>
+                                                            <hr />
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
                                                         <td class="left">
                                                             Meta Title
                                                         </td>
@@ -747,7 +754,7 @@
                                                             </asp:RadEditor>
                                                         </td>
                                                     </tr>
-                                                    <asp:Panel ID="Panel3" runat="server" Visible="False">
+                                                    <asp:Panel ID="Panel3" runat="server" Visible="True">
                                                     <%-- Tiếng Anh--%>
                                                     <tr>
                                                         <td colspan="2">
@@ -804,7 +811,7 @@
                                                             Mô tả
                                                         </td>
                                                         <td>
-                                                            <asp:RadEditor ID="txtDescriptionEn" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP" runat="server" Height="200" Language="vi-VN"
+                                                            <%--<asp:RadEditor ID="txtDescriptionEn" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP" runat="server" Height="200" Language="vi-VN"
                                                                 Skin="Office2007" Width="503px" Content='<%# Bind("DescriptionEn") %>'>
                                                                 <ImageManager DeletePaths="~/Uploads/Image/" UploadPaths="~/Uploads/Image/" ViewPaths="~/Uploads/Image/" MaxUploadFileSize="1024000" />
                                                                 <FlashManager DeletePaths="~/Uploads/Video/" UploadPaths="~/Uploads/Video/" ViewPaths="~/Uploads/Video/" />
@@ -824,7 +831,10 @@
                                                                         <asp:EditorTool Name="ForeColor" />
                                                                     </asp:EditorToolGroup>
                                                                 </Tools>
-                                                            </asp:RadEditor>
+                                                            </asp:RadEditor>--%>
+                                                            <asp:RadTextBox ID="txtDescriptionEn" runat="server" Text='<%# Bind("DescriptionEn") %>'
+                                                                Width="500px" EmptyMessage="Mô tả" TextMode="MultiLine" Height="200">
+                                                            </asp:RadTextBox>
                                                         </td>
                                                     </tr>
                                                     <tr>

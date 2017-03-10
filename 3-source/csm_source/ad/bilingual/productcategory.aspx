@@ -97,7 +97,7 @@
     <asp:RadAjaxPanel ID="RadAjaxPanel1" runat="server" ClientEvents-OnRequestStart="conditionalPostback"
         Width="100%">
         <asp:Label ID="lblError" ForeColor="Red" runat="server"></asp:Label>
-        <asp:RadGrid ID="RadGrid1" AllowMultiRowSelection="True" runat="server" Culture="vi-VN" 
+        <asp:RadGrid ID="RadGrid1" AllowMultiRowSelection="True" runat="server" Culture="vi-VN"
             DataSourceID="ObjectDataSource1" GridLines="Horizontal" AutoGenerateColumns="False"
             AllowAutomaticDeletes="True" ShowStatusBar="True" OnItemCommand="RadGrid1_ItemCommand"
             OnItemDataBound="RadGrid1_ItemDataBound" CssClass="grid" AllowAutomaticUpdates="True"
@@ -166,7 +166,7 @@
                             </div>
                         </ItemTemplate>
                     </asp:GridTemplateColumn>
-                    <asp:GridTemplateColumn DataField="ProductCategoryNameEn" HeaderText="Tên danh mục(Tiếng Anh)" Visible="false">
+                    <asp:GridTemplateColumn DataField="ProductCategoryNameEn" HeaderText="Tên danh mục(Tiếng Anh)">
                         <ItemTemplate>
                             <div class='<%#"catlevel level" +  Eval("Level") %>' style='padding-left: <%# string.IsNullOrEmpty(Eval("Level").ToString()) ? 0 : Convert.ToInt32(Eval("Level")) * 10 %>px'>
                                 <asp:Label ID="lblProductCategoryNameEn" runat="server" Font-Bold='<%# Eval("ParentID").ToString() == "0" ? true : false %>'
@@ -241,12 +241,10 @@
                     </EditColumn>
                     <FormTemplate>
                         <asp:Panel ID="Panel1" runat="server" DefaultButton="lnkUpdate">
-                            <h3 class="searchTitle">
-                                Thông Tin Danh Mục Sản Phẩm</h3>
+                            <h3 class="searchTitle">Thông Tin Danh Mục Sản Phẩm</h3>
                             <table class="search">
                                 <tr>
-                                    <td class="left" valign="top">
-                                        Ảnh đại diện
+                                    <td class="left" valign="top">Ảnh đại diện
                                     </td>
                                     <td>
                                         <asp:HiddenField ID="hdnProductCategoryID" runat="server" Value='<%# Eval("ProductCategoryID") %>' />
@@ -259,8 +257,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="left" valign="top">
-                                        Danh mục cấp trên
+                                    <td class="left" valign="top">Danh mục cấp trên
                                     </td>
                                     <td>
                                         <asp:RadComboBox ID="ddlParent" runat="server" DataSourceID='<%# (Container is GridEditFormInsertItem) ? "ObjectDataSource1" : "ObjectDataSource2" %>'
@@ -277,8 +274,13 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="left" valign="top">
-                                        Meta Title
+                                    <td colspan="2">
+                                        <h3>(Ngôn Ngữ Tiếng Việt)</h3>
+                                        <hr />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="left" valign="top">Meta Title
                                     </td>
                                     <td>
                                         <asp:RadTextBox ID="txtMetaTitle" runat="server" Text='<%# Bind("MetaTitle") %>'
@@ -287,8 +289,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="left" valign="top">
-                                        Meta Description
+                                    <td class="left" valign="top">Meta Description
                                     </td>
                                     <td>
                                         <asp:RadTextBox ID="txtMetaDescription" runat="server" Text='<%# Bind("MetaDescription") %>'
@@ -297,8 +298,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td class="left" valign="top">
-                                        Tên danh mục
+                                    <td class="left" valign="top">Tên danh mục
                                     </td>
                                     <td>
                                         <asp:RadTextBox ID="txtProductCategoryName" runat="server" Text='<%# (Container is GridEditFormInsertItem) ? "" : (string.IsNullOrEmpty(Eval("ProductCategoryName").ToString()) ? "" : Eval("ProductCategoryName").ToString().Remove(0, Convert.ToInt32(Eval("Level")))) %>'
@@ -307,8 +307,7 @@
                                     </td>
                                 </tr>
                                 <tr class="invisible">
-                                    <td class="left" valign="top">
-                                        Mô tả
+                                    <td class="left" valign="top">Mô tả
                                     </td>
                                     <td>
                                         <asp:RadEditor ID="txtDescription" StripFormattingOptions="MSWordRemoveAll,ConvertWordLists,MSWordNoFonts,Font,Css,Span" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP" runat="server" Height="200" Language="vi-VN" Skin="Office2007"
@@ -335,8 +334,7 @@
                                     </td>
                                 </tr>
                                 <tr class="invisible">
-                                    <td class="left" valign="top">
-                                        Nội dung
+                                    <td class="left" valign="top">Nội dung
                                     </td>
                                     <td>
                                         <asp:RadEditor ID="txtContent" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP" runat="server" Language="vi-VN" Skin="Office2007"
@@ -350,16 +348,14 @@
                                         </asp:RadEditor>
                                     </td>
                                 </tr>
-                                <tr class="invisible">
+                                <tr>
                                     <td colspan="2">
-                                        <h3>
-                                            (Ngôn Ngữ Tiếng Anh)</h3>
+                                        <h3>(Ngôn Ngữ Tiếng Anh)</h3>
                                         <hr />
                                     </td>
                                 </tr>
-                                <tr class="invisible">
-                                    <td class="left" valign="top">
-                                        Meta Title(En)
+                                <tr>
+                                    <td class="left" valign="top">Meta Title(En)
                                     </td>
                                     <td>
                                         <asp:RadTextBox ID="txtMetaTitleEn" runat="server" Text='<%# Bind("MetaTitleEn") %>'
@@ -367,9 +363,8 @@
                                         </asp:RadTextBox>
                                     </td>
                                 </tr>
-                                <tr class="invisible">
-                                    <td class="left" valign="top">
-                                        Meta Description(En)
+                                <tr>
+                                    <td class="left" valign="top">Meta Description(En)
                                     </td>
                                     <td>
                                         <asp:RadTextBox ID="txtMetaDescriptionEn" runat="server" Text='<%# Bind("MetaDescriptionEn") %>'
@@ -377,18 +372,17 @@
                                         </asp:RadTextBox>
                                     </td>
                                 </tr>
-                                <tr class="invisible">
-                                    <td class="left" valign="top">
-                                        Tên danh mục(En)
+                                <tr>
+                                    <td class="left" valign="top">Tên danh mục(En)
                                     </td>
                                     <td>
                                         <asp:RadTextBox ID="txtProductCategoryNameEn" runat="server" Text='<%# (Container is GridEditFormInsertItem) ? "" : Eval("ProductCategoryNameEn") %>'
-                                            Width="500px" EmptyMessage="Tên danh mục(En)..."></asp:RadTextBox>
+                                            Width="500px" EmptyMessage="Tên danh mục(En)...">
+                                        </asp:RadTextBox>
                                     </td>
                                 </tr>
                                 <tr class="invisible">
-                                    <td class="left" valign="top">
-                                        Mô tả(En)
+                                    <td class="left" valign="top">Mô tả(En)
                                     </td>
                                     <td>
                                         <asp:RadEditor ID="txtDescriptionEn" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP" runat="server" Height="200" Language="vi-VN"
@@ -415,8 +409,7 @@
                                     </td>
                                 </tr>
                                 <tr class="invisible">
-                                    <td class="left" valign="top">
-                                        Nội dung
+                                    <td class="left" valign="top">Nội dung
                                     </td>
                                     <td>
                                         <asp:RadEditor ID="txtContentEn" ContentFilters="ConvertCharactersToEntities,ConvertToXhtml,OptimizeSpans,IndentHTMLContent,ConvertFontToSpan,IECleanAnchors,FixUlBoldItalic,RemoveScripts,FixEnclosingP" runat="server" Language="vi-VN" Skin="Office2007"
@@ -517,6 +510,5 @@
     </asp:ObjectDataSource>
     <asp:RadProgressManager ID="RadProgressManager1" runat="server" />
     <asp:RadProgressArea ID="ProgressArea1" runat="server" Culture="vi-VN" DisplayCancelButton="True"
-        HeaderText="Đang tải" Skin="Office2007" Style="position: fixed; top: 50% !important;
-        left: 50% !important; margin: -93px 0 0 -188px;" />
+        HeaderText="Đang tải" Skin="Office2007" Style="position: fixed; top: 50% !important; left: 50% !important; margin: -93px 0 0 -188px;" />
 </asp:Content>

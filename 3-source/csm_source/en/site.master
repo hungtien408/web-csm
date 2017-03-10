@@ -9,10 +9,10 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <!-- Bootstrap -->
     <link rel="shortcut icon" href="favicon.ico" />
-    <link href="assets/styles/bootstrap.min.css" rel="stylesheet" />
-    <link href="assets/styles/font-awesome.min.css" rel="stylesheet" />
+    <link href="/assets/styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="/assets/styles/font-awesome.min.css" rel="stylesheet" />
     <%--<link href="assets/styles/slick.css" rel="stylesheet" />--%>
-    <link href="assets/styles/owl.carousel.min.css" rel="stylesheet" />
+    <link href="/assets/styles/owl.carousel.min.css" rel="stylesheet" />
 
     <%--<link rel="stylesheet" type="text/css" href="assets/styles/owl.carousel.min.css" />--%>
 
@@ -39,11 +39,11 @@
     <script type="text/javascript">jwplayer.key = "5qMQ1qMprX8KZ79H695ZPnH4X4zDHiI0rCXt1g==";</script>--%>
     <title></title>
     <!--main style-->
-    <link href="assets/styles/site.css" rel="stylesheet" />
+    <link href="/assets/styles/site.css" rel="stylesheet" />
     <!--end main style-->
 
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/jquery.easing.1.3.js"></script>
+    <script src="/assets/js/jquery.js"></script>
+    <script src="/assets/js/jquery.easing.1.3.js"></script>
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
@@ -73,24 +73,24 @@
                 <div id="header">
                     <div class="container">
                         <div class="logo">
-                            <a href="~/" runat="server">
-                                <img src="assets/images/logo.png" /></a>
+                            <a href="~/en/" runat="server">
+                                <img src="/assets/images/logo.png" /></a>
                         </div>
                         <div class="right-head">
                             <div class="menu">
                                 <ul id="menu" class="desktop-992">
-                                    <li id="a12"><a href="~/" runat="server">Trang chủ</a></li>
-                                    <li><a href="gioi-thieu.aspx">Giới thiệu</a>
+                                    <li id="a12"><a href="~/en/" runat="server">Home</a></li>
+                                    <li><a href="gioi-thieu.aspx">About Us</a>
                                         <%--<ul>
                                         <li><a href="#">content</a></li>
                                         <li><a href="#">content</a></li>
                                         <li><a href="#">content</a></li>
                                     </ul>--%>
                                     </li>
-                                    <li><a href="san-pham.aspx">Sản phẩm</a></li>
-                                    <li><a href="dai-ly.aspx">Đại lý</a></li>
-                                    <li><a href="tuyen-dung.aspx">Tuyển dụng</a></li>
-                                    <li><a href="lien-he.aspx">Liên hệ</a></li>
+                                    <li><a href="san-pham.aspx">Products</a></li>
+                                    <li><a href="dai-ly.aspx">Agency</a></li>
+                                    <li><a href="tuyen-dung.aspx">Career</a></li>
+                                    <li><a href="lien-he.aspx">Contact Us</a></li>
                                 </ul>
                                 <a class="panel-a menu-mo ipadmo-992" href="#menumobile" data-position="true" data-type="false">
                                     <span class="fa fa-reorder"></span>Menu
@@ -150,14 +150,14 @@
                 </div>
                 <div class="lienhe">
                     <div class="lh">
-                        liên hệ với chúng tôi
+                        Contact Us
                     </div>
                     <div class="skype">
                         <asp:ListView ID="lstSkype" runat="server" DataSourceID="odsSkype"
                             EnableModelValidation="True">
                             <ItemTemplate>
                                 <div class="item on">
-                                    <a href='<%# Eval("Tag") %>'><%# Eval("ProductName") %></a>
+                                    <a href='<%# Eval("Tag") %>'><%# Eval("ProductNameEn") %></a>
                                 </div>
                             </ItemTemplate>
                             <LayoutTemplate>
@@ -235,16 +235,16 @@
                     <div class="container">
                         <div class="pull-left">
                             <div class="logo-ft">
-                                <a href="~/" runat="server">
-                                    <img src="assets/images/logo-ft.png" alt="" /></a>
+                                <a href="~/en/" runat="server">
+                                    <img src="/assets/images/logo-ft.png" alt="" /></a>
                             </div>
                             <div class="cty">
                                 <asp:ListView ID="lstInfo" runat="server" DataSourceID="odsInfo"
                                     EnableModelValidation="True">
                                     <ItemTemplate>
-                                        <h1><%# Eval("ProductName") %></h1>
+                                        <h1><%# Eval("ProductNameEn") %></h1>
                                         <ul>
-                                            <li class="local">Địa chỉ: <%# Eval("MetaTittle") %></li>
+                                            <li class="local">Địa chỉ: <%# Eval("MetaTittleEn") %></li>
                                             <li class="phone">Hotline: <%# Eval("Tag") %> / Fax: <%# Eval("TagEn") %> </li>
                                             <li class="mail">Email: <a href='<%# "mailto:" + Eval("MetaDescription") %>'><%# Eval("MetaDescription") %></a></li>
                                         </ul>
@@ -339,12 +339,12 @@
                 <div class="menu-in">
                     <div class="menu-mobile">
                         <div class="logo">
-                            <a id="A2" href="~/" runat="server">
-                                <img class="img-responsive" src="assets/images/logo.png" alt="logo" />
+                            <a id="A2" href="~/en/" runat="server">
+                                <img class="img-responsive" src="/assets/images/logo.png" alt="logo" />
                             </a>
                         </div>
                         <ul id="menuMobiles" class="menu-nav">
-                            <li class="home"><a id="A3" href="~/" runat="server">Trang chủ</a></li>
+                            <li class="home"><a id="A3" href="~/en/" runat="server">Trang chủ</a></li>
                         </ul>
                     </div>
                 </div>
@@ -353,12 +353,12 @@
         </div>
         <a href="#" class="scroll-to-top"><i class="glyphicon glyphicon-chevron-up"></i></a>
         <div id="runScript" runat="server"></div>
-        <script src="assets/js/bootstrap.min.js" defer="defer"></script>
-        <script src="assets/js/jquery.panel.mobile.js" defer="defer"></script>
+        <script src="/assets/js/bootstrap.min.js" defer="defer"></script>
+        <script src="/assets/js/jquery.panel.mobile.js" defer="defer"></script>
         <%--<script src="assets/js/slick.min.js"></script>--%>
-        <script src="assets/js/owl.carousel.min.js" defer="defer"></script>
+        <script src="/assets/js/owl.carousel.min.js" defer="defer"></script>
         <!-- main js -->
-        <script src="assets/js/jquery.main.js" defer="defer"></script>
+        <script src="/assets/js/jquery.main.js" defer="defer"></script>
 
         <!-- end main js -->
     </form>
