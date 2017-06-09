@@ -14,13 +14,14 @@
         <div class="clr"></div>
         <div class="contact-left">
             <div class="address-contact">
-                <h4 class="text-uppercase">địa chỉ của chúng tôi</h4>
+                <h4 class="text-uppercase">Công ty chúng tôi</h4>
+                <h5>CÔNG TY TNHH M – TECH SOLUTIONS</h5>
                 <%--<div class="wrap-node">Resourceful significant international agriculture underprivileged; world problem solving, improving quality local solutions technology developing nations transform the world. Medical advocate social entrepreneurship.</div>--%>
                 <asp:ListView ID="lstInfo" runat="server" DataSourceID="odsInfo" EnableModelValidation="True">
                     <ItemTemplate>
                         <p><span class="fa fa-map-marker"></span>Địa chỉ: <%# Eval("MetaTittle") %></p>
                         <p><span class="fa fa-phone"></span>Tel: <%# Eval("Tag") %>  / Fax: <%# Eval("TagEn") %></p>
-                        <p><span class="fa fa-envelope"></span>Email:<a href='<%# "mailto:" + Eval("MetaDescription") %>'><%# Eval("MetaDescription") %></a></p>
+                        <p><span class="fa fa-envelope"></span>Email: <a href='<%# "mailto:" + Eval("MetaDescription") %>'><%# Eval("MetaDescription") %></a></p>
                     </ItemTemplate>
                     <LayoutTemplate>
                         <span runat="server" id="itemPlaceholder" />
